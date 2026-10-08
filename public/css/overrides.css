@@ -1,0 +1,109 @@
+.brand-mark svg { width: 21px; color: #fff; }
+.brand-mark > span { display: none; }
+.skeleton { background: #eee9e2; background-image: none; animation: pulse 1.2s ease-in-out infinite alternate; }
+@keyframes pulse { to { opacity: .45; } }
+
+/* Shared header and footer follow the reference on every page. */
+.site-header { height: 60px; }
+.nav-shell { max-width: 1180px; }
+.brand-mark { width: 34px; height: 34px; border-radius: 8px; }
+.site-header nav a { padding: 7px 15px; }
+.nav-search-panel { height: 60px; }
+
+.site-footer {
+  background: #fff;
+  color: #1c1b19;
+  border-top: 1px solid #efe9e1;
+  padding: 44px max(24px, calc((100% - 1180px) / 2 + 24px)) 22px;
+}
+.footer-main { padding-bottom: 30px; }
+.site-footer .brand { color: #1c1b19; }
+.footer-main p { color: #6b665f; }
+.footer-main nav { color: #4d4944; }
+.footer-main nav a:hover { color: #c94a2f; }
+.footer-bottom { border-color: #efe9e1; color: #817a72; }
+
+/* Small, global resilience rules for dynamic database content. */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { width: 100%; min-width: 0; }
+img { display: block; max-width: 100%; height: auto; }
+.container,
+.nav-shell,
+.footer-main,
+.hero-copy,
+.hero-media,
+.page-heading > *,
+.detail-grid > *,
+.form-section > *,
+.form-grid > *,
+.about-bottom > *,
+.restaurant-card,
+.card-foot,
+.info-item { min-width: 0; }
+.restaurant-card h3,
+.restaurant-cell,
+.info-item strong,
+.page-heading h1,
+.about-copy,
+.code-card { overflow-wrap: anywhere; }
+.input, .control, select, textarea { max-width: 100%; min-width: 0; }
+.button, .page-button, .icon-button { transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease; }
+.button:active, .page-button:active { transform: translateY(1px); }
+.modal { max-height: calc(100dvh - 32px); overflow-y: auto; }
+.pagination { justify-content: flex-end; }
+
+@media (max-width: 700px) {
+  .history-card table { min-width: 0; table-layout: fixed; }
+  .history-card th, .history-card td { overflow-wrap: anywhere; }
+  .table-wrap { overflow: visible; }
+  .restaurant-table { min-width: 0; }
+  .restaurant-table thead { display: none; }
+  .restaurant-table,
+  .restaurant-table tbody,
+  .restaurant-table tr,
+  .restaurant-table td { display: block; width: 100%; min-width: 0; }
+  .restaurant-table tr { position: relative; padding: 17px 18px; border-bottom: 1px solid var(--sand); }
+  .restaurant-table td { padding: 3px 0; border: 0; }
+  .restaurant-table td:nth-child(2)::before { content: "Borough: "; color: var(--muted); }
+  .restaurant-table td:nth-child(3)::before { content: "Cuisine: "; color: var(--muted); }
+  .restaurant-table td:nth-child(4),
+  .restaurant-table td:nth-child(5) { display: inline-block; width: auto; margin: 8px 10px 0 0; }
+  .restaurant-table td.actions-cell { position: absolute; top: 13px; right: 10px; width: auto; }
+  .restaurant-cell { padding-right: 105px; }
+  .table-footer { align-items: flex-start; flex-direction: column; gap: 14px; }
+  .pagination { max-width: 100%; justify-content: flex-start; flex-wrap: wrap; }
+}
+
+@media (max-width: 360px) {
+  .restaurant-cell { padding-right: 0; }
+  .restaurant-table td.actions-cell { position: static; margin-top: 8px; }
+  .restaurant-table .actions { justify-content: flex-start; }
+}
+
+@media (max-width: 800px) {
+  .site-header nav { top: 60px; }
+}
+
+@media (max-width: 600px) {
+  .section-heading { flex-wrap: wrap; }
+  .section-heading .db-badge { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+  .site-footer { padding: 38px 18px 20px; text-align: center; }
+  .footer-main { align-items: center; gap: 23px; }
+  .footer-main > div { display: flex; flex-direction: column; align-items: center; }
+  .footer-main nav { justify-content: center; gap: 22px; }
+  .footer-bottom { text-align: center; }
+}
+
+@media (max-width: 380px) {
+  .nav-shell { padding-inline: 16px; }
+  .brand { gap: 8px; font-size: 16px; }
+  .brand-mark { width: 32px; height: 32px; }
+  .nav-actions { gap: 0; }
+  .footer-main nav { width: 100%; gap: 16px; }
+  .command-bar { align-items: flex-start; flex-direction: column; }
+  .history-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

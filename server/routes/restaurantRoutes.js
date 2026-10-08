@@ -1,0 +1,11 @@
+const router = require('express').Router();
+const controller = require('../controllers/restaurantController');
+router.get('/stats', controller.getStats);
+router.get('/restaurants/meta', controller.getMetadata);
+router.get('/restaurants/best-quality', controller.getBestQuality);
+router.get('/restaurants', controller.listRestaurants);
+router.get('/restaurants/:id', controller.getRestaurant);
+router.post('/restaurants', controller.createRestaurant);
+router.put('/restaurants/:id', controller.updateRestaurant);
+router.delete('/restaurants/:id', controller.deleteRestaurant);
+module.exports = router;

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Explore and manage restaurant records with RestoHub.">
+  <title>Home - RestoHub</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/home.css">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"></head>
+<body data-page="home">
+  <main class="home-main">
+    <div class="container">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <span class="eyebrow">Discover. Explore. Manage Restaurants.</span>
+          <h1 id="hero-title">Discover <span>Restaurants</span></h1>
+          <p>Explore restaurants from our database and discover places by location, cuisine, and rating.</p>
+          <form class="hero-search" id="hero-search" role="search">
+            <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><input name="search" maxlength="100" placeholder="Search restaurants..." aria-label="Search restaurants"></label>
+          </form>
+          <div class="hero-actions">
+            <button class="button button-primary" type="submit" form="hero-search">Explore Restaurants <span aria-hidden="true"></span></button>
+            <a class="button" href="/restaurants.html">View All Restaurants</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="/assets/restaurant-hero.jpg" alt="A warmly lit restaurant dining room">
+          <div class="inspection-float" id="latest-inspection"><span class="grade-badge grade-none">—</span><div><small>Latest inspection</small><h3>Loading restaurant…</h3><p>Fetching database record</p></div></div>
+        </div>
+      </section>
+      <section class="stats panel" id="stats" aria-label="Restaurant database statistics">
+        <div class="stat"><span>Restaurants</span><strong>—</strong><code>restaurants.countDocuments()</code></div>
+        <div class="stat"><span>Boroughs</span><strong>—</strong><code>distinct("borough")</code></div>
+        <div class="stat"><span>Cuisine types</span><strong>—</strong><code>distinct("cuisine")</code></div>
+        <div class="stat"><span>Grade levels</span><strong>—</strong><code>distinct("grades.grade")</code></div>
+      </section>
+      <section class="explore-section" aria-labelledby="explore-title">
+        <div class="section-heading"><div><h2 id="explore-title">Explore Restaurants</h2><p>Most recently inspected restaurants in the database.</p></div><a class="text-link" href="/restaurants.html">View all <span aria-hidden="true">→</span></a></div>
+        <div class="restaurant-grid" id="recent-grid" aria-live="polite"><div class="restaurant-card"><div class="skeleton"></div></div><div class="restaurant-card"><div class="skeleton"></div></div><div class="restaurant-card"><div class="skeleton"></div></div></div>
+      </section>
+      <section class="cta"><div><h2>Ready to explore?</h2><p>Browse our restaurant database and find your next place to eat.</p></div><a class="button button-primary" href="/restaurants.html">Browse Restaurants <span aria-hidden="true">→</span></a></section>
+    </div>
+  </main>
+  <script src="/js/common.js"></script>
+  <script src="/js/home.js"></script>
+</body>
+</html>

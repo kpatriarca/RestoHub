@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>About - RestoHub</title><link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="/css/responsive.css"><link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"></head><body data-page="about"><main class="page"><div class="container"><section class="about-intro"><h1>About RestoHub</h1><p>RestoHub is a restaurant directory and database management web application designed to display and manage restaurant information stored in a database.</p></section><section class="about-cards"><article class="about-card panel"><h2>Explore</h2><p>Browse restaurant information, from location and cuisine to full inspection history.</p><span class="db-badge">READ</span><br><a class="text-link" href="/restaurants.html">Open →</a></article><article class="about-card panel"><h2>Search</h2><p>Find restaurants using search and filters by borough, cuisine, and grade.</p><span class="db-badge">READ · query</span><br><a class="text-link" href="/restaurants.html?focus=search">Open →</a></article><article class="about-card panel"><h2>Manage</h2><p>Add, edit, and delete restaurant records, with confirmation before anything is removed.</p><span class="db-badge">CREATE · UPDATE · DELETE</span><br><a class="text-link" href="/add-restaurant.html">Open →</a></article></section><section class="about-bottom"><div class="about-copy"><h2>Built around the restaurant record</h2><p>Every screen reads from and writes to documents in the <code>restaurants</code> collection of <code>dbRestaurants</code>. Values shown in the application come from live MongoDB results.</p><h3>Planned stack</h3><div class="stack-list"><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div><div class="code-card"><div class="code-head">dbRestaurants.restaurants — sample document</div><pre>{
+  <span class="code-key">_id</span>: ObjectId(<span class="code-string">"..."</span>),
+  <span class="code-key">restaurant_id</span>: <span class="code-string">"30075445"</span>,
+  <span class="code-key">name</span>: <span class="code-string">"Morris Park Bake Shop"</span>,
+  <span class="code-key">borough</span>: <span class="code-string">"Bronx"</span>,
+  <span class="code-key">cuisine</span>: <span class="code-string">"Bakery"</span>,
+  <span class="code-key">address</span>: {
+    <span class="code-key">building</span>: <span class="code-string">"1007"</span>,
+    <span class="code-key">street</span>: <span class="code-string">"Morris Park Ave"</span>,
+    <span class="code-key">zipcode</span>: <span class="code-string">"10462"</span>
+  },
+  <span class="code-key">grades</span>: [{
+    <span class="code-key">date</span>: ISODate(<span class="code-string">"2026-09-18"</span>),
+    <span class="code-key">grade</span>: <span class="code-string">"A"</span>,
+    <span class="code-key">score</span>: 2
+  }]
+}</pre></div></section></div></main><script src="/js/common.js"></script></body></html>
